@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "kursach-7"
+version = "0.1.0"
+description = ""
+authors = ["berestw <paladin.berestw@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.7"
+psycopg2-binary = "^2.9.9"
+pillow = "^10.4.0"
+ipython = "^8.26.0"
+getenv = "^0.2.0"
+python-dotenv = "^1.0.1"
+djangorestframework = "^3.15.2"
+drf-yasg = "^1.21.7"
+django-cors-headers = "^4.4.0"
+djangorestframework-simplejwt = "^5.3.1"
+setuptools = "^71.0.2"
+django-celery-beat = "^2.6.0"
+celery = "^5.4.0"
+requests = "^2.32.3"
+coverage = "^7.6.0"
+flake8 = "^7.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
