@@ -41,7 +41,7 @@ class PleasantHabitValidator:
 
     def __call__(self, habit):
         if (habit.get(self.related_habit)
-                and not habit.get(self.pleasant_habit_sign)):
+                and not habit.get(self.related_habit).pleasant_habit_sign):
             raise ValidationError(
                 "В связанные привычки могут попадать только "
                 "привычки с признаком приятной привычки."
