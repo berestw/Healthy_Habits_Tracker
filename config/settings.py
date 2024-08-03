@@ -5,18 +5,14 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-PATH_DB = BASE_DIR / '.env'
-load_dotenv(PATH_DB)
-PASSWORD_DB = os.getenv('PASSWORD_DB')
-USER_DB = os.getenv('USER_DB')
-NAME_DB = os.getenv('NAME_DB')
+ENV_DIR = BASE_DIR / '.env'
+load_dotenv(ENV_DIR)
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv("DEBUG", False) == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -68,12 +64,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": NAME_DB,  # Название БД
-        "USER": USER_DB,  # Пользователь для подключения
-        "PASSWORD": PASSWORD_DB,  # Пароль для этого пользователя
-        "HOST": os.getenv("HOST"),
-        "PORT": os.getenv("PORT"),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT'),
     }
 }
 
